@@ -14,22 +14,23 @@ class Timer {
   }
 
   start = () => {
-    this.onStart && this.onStart();
+    this.onStart && this.onStart(this.timeRemaining);
     this.tick();
-    this.interval = setInterval(this.tick, 1000);
+    this.interval = setInterval(this.tick, 50);
   };
 
   pause = () => {
     clearInterval(this.interval);
+    console.log('Interval cleared');
   };
 
   tick = () => {
     if (this.timeRemaining <= 0) {
-      this.pause;
+      this.pause();
       this.onComplete && this.onComplete();
     } else {
-      this.timeRemaining = this.timeRemaining - 1;
-      this.onTick && this.onTick();
+      this.timeRemaining = this.timeRemaining - 0.05;
+      this.onTick && this.onTick(this.timeRemaining);
     }
   };
 
@@ -38,6 +39,6 @@ class Timer {
   }
 
   set timeRemaining(time) {
-    this.durInput.value = time;
+    this.durInput.value = time.toFixed(2);
   }
 }
