@@ -18,8 +18,16 @@ class Timer {
   };
 
   tick = () => {
-    console.log('tick');
+    this.timeRemaining = this.timeRemaining - 1;
   };
+
+  get timeRemaining() {
+    return parseFloat(this.durInput.value);
+  }
+
+  set timeRemaining(time) {
+    this.durInput.value = time;
+  }
 }
 
 // Select DOM elements
