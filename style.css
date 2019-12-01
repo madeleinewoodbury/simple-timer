@@ -1,15 +1,14 @@
 body {
   font-family: 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans',
     'Droid Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  background-color: rgb(29, 29, 29);
 }
 
 .container {
   max-width: 800px;
-  margin: 0 auto;
+  margin: 4rem auto;
   display: flex;
   justify-content: center;
-  align-items: center;
-  height: 100vh;
 }
 
 .dial {
@@ -28,12 +27,16 @@ body {
   width: 240px;
   font-size: 90px;
   text-align: center;
+  background-color: rgb(29, 29, 29);
+  color: white;
 }
 
 .timer button {
   border: none;
   font-size: 36px;
   cursor: pointer;
+  background-color: rgb(29, 29, 29);
+  color: white;
 }
 
 .timer button:focus {
